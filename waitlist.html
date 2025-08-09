@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launchpad Teens - Waitlist</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.4);
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        main {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: #ffdd57;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        input, select {
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+        }
+
+        button {
+            background: #ffdd57;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #ffc107;
+        }
+
+        .success {
+            margin-top: 15px;
+            color: lightgreen;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        🚀 Launchpad Teens - Join the Waitlist
+    </header>
+
+    <main>
+        <h2>Sign Up for Early Access</h2>
+        <form id="waitlistForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <select id="type" required>
+                <option value="">Select Type</option>
+                <option value="student">🎓 Student</option>
+                <option value="organization">🏢 Organization</option>
+            </select>
+            <button type="submit">Join Waitlist</button>
+        </form>
+        <div class="success" id="successMessage"></div>
+    </main>
+
+    <script>
+        document.getElementById("waitlistForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const type = document.getElementById("type").value;
+
+            // Here you would send data to your backend or Google Sheet API
+            console.log("Waitlist Entry:", { name, email, type });
+
+            document.getElementById("successMessage").textContent = "✅ You’re on the waitlist!";
+            document.getElementById("waitlistForm").reset();
+        });
+    </script>
+
+</body>
+</html>

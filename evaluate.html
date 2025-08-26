@@ -1,103 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evaluate | Launchpad Teens</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <style>
-    body { font-family:'Poppins',sans-serif; background:#0f0f0f; color:#f1f1f1; line-height:1.6; }
-    nav { background:#111; padding:1rem 0; }
-    .nav-container { max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; }
-    .logo { font-size:1.8rem; font-weight:600; color:#00ffe7; }
-    .nav-links { list-style:none; display:flex; gap:1.5rem; }
-    .nav-links a { text-decoration:none; color:#f1f1f1; transition:color .3s; }
-    .nav-links a:hover, .nav-links .active { color:#00ffe7; }
-    .page-header { background:linear-gradient(135deg,#1a1a2e,#16213e); padding:4rem 2rem; text-align:center; }
-    .page-header h2 { font-size:2.8rem; color:#00ffe7; }
-    .page-header p { color:#ccc; font-size:1.2rem; }
-    .container { max-width:1100px; margin:auto; padding:2rem; }
-    .evaluation-form { background:#1c1c1c; padding:2rem; border-radius:12px; box-shadow:0 0 20px rgba(0,255,231,.1); }
-    .evaluation-form label { display:block; margin-bottom:.5rem; color:#00ffe7; font-weight:600; }
-    .evaluation-form input, .evaluation-form select { width:100%; padding:.75rem; margin-bottom:1.5rem; background:#111; color:#f1f1f1; border:1px solid #333; border-radius:6px; }
-    .btn { padding:.75rem 1.5rem; background:#00ffe7; color:#000; font-weight:bold; text-transform:uppercase; border:none; border-radius:6px; cursor:pointer; transition:background .3s; }
-    .btn:hover { background:#00c2b7; }
-    #result { margin-top:2rem; padding:1.5rem; background:#222; border-left:5px solid #00ffe7; border-radius:8px; display:none; }
-    footer { text-align:center; padding:2rem; background:#111; color:#777; font-size:.9rem; margin-top:3rem; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <div class="container nav-container">
-      <h1 class="logo">Launchpad Teens</h1>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="evaluate.html" class="active">Evaluate</a></li>
-        <li><a href="pitch.html">Pitch</a></li>
-        <li><a href="waitlist.html">Waitlist</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <header class="page-header">
-    <div class="container">
-      <h2>Evaluate Your Potential</h2>
-      <p>Pick your subjects, interests, and goals to discover a career suggestion instantly.</p>
+  <div class="stars"></div>
+  <header class="nav">
+    <div class="nav-wrap">
+      <div class="brand">
+        <span>Launchpad Teens</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="evaluate.html" class="active">Evaluate</a></li>
+          <li><a href="pitch.html">Pitch</a></li>
+          <li><a href="waitlist.html">Waitlist</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <section class="container">
-    <form id="evalForm" class="evaluation-form" onsubmit="return false;">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" required />
+  <main class="container">
+    <section class="page-header">
+      <h2><span class="grad">Evaluate Your Potential</span></h2>
+      <p>Pick your subjects, interests, and goals to discover a career suggestion instantly.</p>
+    </section>
 
-      <label for="age">Age</label>
-      <input type="number" id="age" required />
+    <section class="main-content">
+      <form id="evalForm" class="form-card" onsubmit="return false;">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
 
-      <label for="subjects">Favorite Subject (type to search)</label>
-      <input list="subjects-list" id="subjects" placeholder="Start typing..." />
-      <datalist id="subjects-list">
-        <option value="Mathematics"><option value="Physics"><option value="Biology"><option value="Chemistry">
-        <option value="Computer Science"><option value="Economics"><option value="Art"><option value="Literature">
-      </datalist>
+        <label for="age">Age</label>
+        <input type="number" id="age" required />
 
-      <label for="interests">Your Interest (type to search)</label>
-      <input list="interests-list" id="interests" placeholder="e.g. programming, design" />
-      <datalist id="interests-list">
-        <option value="Programming"><option value="Design"><option value="Writing"><option value="Music">
-        <option value="Robotics"><option value="Sports"><option value="Business">
-      </datalist>
+        <label for="subjects">Favorite Subject (type to search)</label>
+        <input list="subjects-list" id="subjects" placeholder="Start typing..." />
+        <datalist id="subjects-list">
+          <option value="Mathematics"><option value="Physics"><option value="Biology"><option value="Chemistry">
+          <option value="Computer Science"><option value="Economics"><option value="Art"><option value="Literature">
+        </datalist>
 
-      <label for="skills">Current Skill (type to search)</label>
-      <input list="skills-list" id="skills" placeholder="e.g. Python, drawing" />
-      <datalist id="skills-list">
-        <option value="Python"><option value="JavaScript"><option value="Drawing"><option value="Public Speaking">
-        <option value="Leadership"><option value="Teamwork"><option value="Data Analysis">
-      </datalist>
+        <label for="interests">Your Interest (type to search)</label>
+        <input list="interests-list" id="interests" placeholder="e.g. programming, design" />
+        <datalist id="interests-list">
+          <option value="Programming"><option value="Design"><option value="Writing"><option value="Music">
+          <option value="Robotics"><option value="Sports"><option value="Business">
+        </datalist>
 
-      <label for="goals">Career Goal (type to search)</label>
-      <input list="goals-list" id="goals" placeholder="e.g. entrepreneur, astronaut" />
-      <datalist id="goals-list">
-        <option value="Software Engineer"><option value="Doctor"><option value="Scientist">
-        <option value="Entrepreneur"><option value="Artist"><option value="Writer"><option value="Game Developer">
-      </datalist>
+        <label for="skills">Current Skill (type to search)</label>
+        <input list="skills-list" id="skills" placeholder="e.g. Python, drawing" />
+        <datalist id="skills-list">
+          <option value="Python"><option value="JavaScript"><option value="Drawing"><option value="Public Speaking">
+          <option value="Leadership"><option value="Teamwork"><option value="Data Analysis">
+        </datalist>
 
-      <label for="preferred-path">Preferred Field</label>
-      <select id="preferred-path">
-        <option value="">-- Select --</option>
-        <option value="tech">Technology</option>
-        <option value="science">Science</option>
-        <option value="business">Business</option>
-        <option value="arts">Arts</option>
-        <option value="other">Other</option>
-      </select>
+        <label for="goals">Career Goal (type to search)</label>
+        <input list="goals-list" id="goals" placeholder="e.g. entrepreneur, astronaut" />
+        <datalist id="goals-list">
+          <option value="Software Engineer"><option value="Doctor"><option value="Scientist">
+          <option value="Entrepreneur"><option value="Artist"><option value="Writer"><option value="Game Developer">
+        </datalist>
 
-      <button id="evalBtn" type="button" class="btn">Evaluate</button>
-    </form>
+        <label for="preferred-path">Preferred Field</label>
+        <select id="preferred-path">
+          <option value="">-- Select --</option>
+          <option value="tech">Technology</option>
+          <option value="science">Science</option>
+          <option value="business">Business</option>
+          <option value="arts">Arts</option>
+          <option value="other">Other</option>
+        </select>
 
-    <div id="result"></div>
-  </section>
+        <button id="evalBtn" type="button" class="btn primary">Evaluate</button>
+      </form>
+
+      <div id="result" class="card" style="margin-top:2rem; display:none;"></div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
@@ -106,13 +91,11 @@
   </footer>
 
   <script>
-    // --- Helper: check if all core fields are filled
     function allFilled() {
       const v = id => (document.getElementById(id).value || "").trim();
       return v("name") && v("age") && v("subjects") && v("interests") && v("skills") && v("goals") && v("preferred-path");
     }
 
-    // --- Evaluation logic
     function evaluate() {
       const name = document.getElementById("name").value.trim();
       const subject = document.getElementById("subjects").value.toLowerCase();
@@ -127,24 +110,18 @@
       }
 
       let blocks = [];
-
-      // Tech
       if (field === "tech" || subject.includes("computer") || interest.includes("program") || goal.includes("engineer") || goal.includes("game")) {
         blocks.push(`<p>💻 <b>Technology Fit:</b> You align with Software, AI, Cybersecurity, or Game Dev. Next steps: build 2–3 projects, learn Git/GitHub, and try hackathons.</p>`);
       }
-      // Science
       if (field === "science" || ["biology","chemistry","physics"].some(s=>subject.includes(s)) || goal.includes("doctor") || goal.includes("scientist")) {
         blocks.push(`<p>🔬 <b>Science Fit:</b> Consider Medicine, Research, or Biotech. Next steps: join a lab program, enter science fairs, and strengthen math/statistics.</p>`);
       }
-      // Business
       if (field === "business" || interest.includes("business") || goal.includes("entrepreneur") || skill.includes("leadership")) {
         blocks.push(`<p>📈 <b>Business Fit:</b> Entrepreneurship, Marketing, or Finance could suit you. Next steps: launch a small venture, learn spreadsheets, and pitch practice.</p>`);
       }
-      // Arts
       if (field === "arts" || interest.includes("design") || subject.includes("art") || skill.includes("drawing") || goal.includes("artist") || goal.includes("writer")) {
         blocks.push(`<p>🎨 <b>Creative Fit:</b> Design, Media, Music, or Writing may fit your style. Next steps: build a portfolio site, publish regularly, and collaborate.</p>`);
       }
-      // General
       if (blocks.length === 0) {
         blocks.push(`<p>🌍 <b>Versatile Profile:</b> Explore interdisciplinary paths: Creative Tech, Product, or Education. Try internships and short courses to sample fields.</p>`);
       }
@@ -154,16 +131,17 @@
       result.style.display = "block";
     }
 
-    // Ensure button works even if HTML loads before JS
     document.addEventListener("DOMContentLoaded", () => {
       const btn = document.getElementById("evalBtn");
-      btn.addEventListener("click", (e) => { e.preventDefault(); evaluate(); });
-
-      // Auto-evaluate when all fields are filled / changed
+      if (btn) {
+        btn.addEventListener("click", (e) => { e.preventDefault(); evaluate(); });
+      }
       ["name","age","subjects","interests","skills","goals","preferred-path"].forEach(id => {
         const el = document.getElementById(id);
-        const evt = (el.tagName === "SELECT") ? "change" : "input";
-        el.addEventListener(evt, () => { if (allFilled()) evaluate(); });
+        if (el) {
+          const evt = (el.tagName === "SELECT") ? "change" : "input";
+          el.addEventListener(evt, () => { if (allFilled()) evaluate(); });
+        }
       });
     });
   </script>
